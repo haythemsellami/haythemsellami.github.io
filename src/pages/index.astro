@@ -12,7 +12,7 @@ import SkillLayout from '../components/SkillLayout.astro'
 
 // import { getAllPosts, sortMDByDate } from '@/utils'
 
-const backend = ['Solidity', 'Python', 'TypeScript/JS', 'Rust']
+const backend = ['Python', 'TypeScript/JS', 'Rust']
 
 // const MAX_POSTS = 10
 // const allPosts = await getAllPosts()
@@ -48,12 +48,7 @@ const backend = ['Solidity', 'Python', 'TypeScript/JS', 'Rust']
 							></path></svg
 						>
 					</Label>
-					<Label
-						title='Github'
-						as='a'
-						href='https://github.com/haythemsellami'
-						target='_blank'
-					>
+					<Label title='Github' as='a' href='https://github.com/haythemsellami' target='_blank'>
 						<svg
 							xmlns='http://www.w3.org/2000/svg'
 							viewBox='0 0 24 24'
@@ -65,32 +60,15 @@ const backend = ['Solidity', 'Python', 'TypeScript/JS', 'Rust']
 							></path></svg
 						>
 					</Label>
-					<Label
-						title='Linkedin'
-						as='a'
-						href='https://www.linkedin.com/in/haythem96/'
-						target='_blank'
-					>
-						<svg
-							xmlns='http://www.w3.org/2000/svg'
-							viewBox='0 0 16 16'
-							slot='icon'
-							class='h-5 w-5 text-foreground/75'
-							><path
-								fill='currentColor'
-								d='M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854zm4.943 12.248V6.169H2.542v7.225zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248c-.015-.709-.52-1.248-1.342-1.248S2.4 3.226 2.4 3.934c0 .694.521 1.248 1.327 1.248zm4.908 8.212V9.359c0-.216.016-.432.08-.586c.173-.431.568-.878 1.232-.878c.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252c-1.274 0-1.845.7-2.165 1.193v.025h-.016l.016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225z'
-							></path></svg
-						>
-					</Label>
 				</div>
 			</div>
 		</section>
 
 		<Section title='About'>
 			<p class='text-muted-foreground'>
-				Passionate about Smart Contract Engineering, Rust and all things Open Source.
-				I currently work on building different on-chain financials protocols at Euler Labs.
-				Before that, I was engineering options and derivative products(Squeeth) at Opyn.
+				Passionate about Smart Contract Engineering, Rust and all things Open Source. I currently
+				work on building different on-chain financials protocols at Euler Labs. Before that, I was
+				engineering options and derivative products(Squeeth) at Opyn.
 			</p>
 		</Section>
 		<!-- {
@@ -111,17 +89,27 @@ const backend = ['Solidity', 'Python', 'TypeScript/JS', 'Rust']
 			<Card
 				heading='Senior Smart Contract Engineer'
 				subheading='Euler Labs'
-				date='Nov 2023 - Present'
+				date='Nov 2023 - Apr 2025'
 				imagePath='/src/assets/about-astro.png'
 				altText='Euler Labs logo'
 				imageClass='h-12 w-auto md:-left-16'
 			>
 				<ul class='ml-4 list-disc text-muted-foreground'>
-					<li>Designing and writing technical spec for a modular DEX protocol.</li>
-					<li>Researching AMM designs.</li>
-					<li>Contributing in a modular lending protocol implementation,
-						mainly writing tests and doing security code reviews.</li>
-					<li>Contributing in improving the engineering and development processes.</li>
+					<li>
+						Designed and fully implemented Euler Earn, a liquidity allocation protocol, that deploy
+						funds and rebalance between any ERC4626-compatible contracts.
+					</li>
+					<li>
+						Contributed to writing the tests suite (unit tests, fuzz testing & e2e tests) for the
+						lending and borrowing protocol.
+					</li>
+					<li>
+						Contributed in building EulerSwap, a novel AMM that integrates with the Euler V2
+						protocol for better capital-efficiency, mainly worked on the factory and the swap
+						periphery contracts. Also handled the integration with external DEX-aggregators,
+						including 0x, ParaSwap & Tycho protocol.
+					</li>
+					<li>Internal security auditing & PR reviews.</li>
 				</ul>
 			</Card>
 			<Card
@@ -133,11 +121,45 @@ const backend = ['Solidity', 'Python', 'TypeScript/JS', 'Rust']
 				imageClass='h-12 w-auto md:-left-16'
 			>
 				<ul class='ml-4 list-disc text-muted-foreground'>
-					<li>Designing and writing technical specs for on-chain options, derivatives protocol, yield strategies, oracles contracts.</li>
-					<li>Building, contributing to and implementing from scratch robust on-chain protocols that held significant TVL amount:</li>
-					<li>Working closely with the research team in the initial stages of protocol design and architecture.</li>
-					<li>Facilitating contract audits and release cycles.</li>
-					<li>Building an maintaining backend systems.</li>
+					<li>Wrote technical spec, designed options and derivatives protocols.</li>
+					<li>
+						Built, contributed to and implemented from scratch multiple secure and robust smart
+						contracts systems, includes Gamma Protocol, the first on-chain options protocol and
+						Squeeth protocol, a new primitive in DeFi, the first power perpetual token.
+					</li>
+					<li>
+						Built diﬀerent vaults and on-chain strategies contracts: Crab strategy, a delta neutral
+						strategy on top of Squeeth, and ZenBull strategy that integrates with Euler v1.
+					</li>
+					<li>
+						Built and maintained multiple bots and scripts for liquidation, Oracle keepers bot,
+						monitoring API using nodeJs, Python, OpenZeppelin Defender, Google Cloud services.
+					</li>
+					<li>
+						Integrated with diﬀerent AMMs, oracle systems, cross-chain messaging systems and
+						deployed on multiple L2 networks.
+					</li>
+				</ul>
+			</Card>
+			<Card
+				heading='Smart Contract Developer'
+				subheading='Freelance'
+				date='Jul 2018 - Mar 2020'
+				imagePath='/src/assets/about-astro.png'
+				altText='Freelance logo'
+				imageClass='h-12 w-auto md:-left-16'
+			>
+				<ul class='ml-4 list-disc text-muted-foreground'>
+					<li>Built a pooled liqudity market and developed an Oracle system for Alkemi Network.</li>
+					<li>
+						Worked with Coinsence, incubated by UNICEF Innovation Fund, to build a communities based
+						fundraising system, built on top of Aragon framework.
+					</li>
+					<li>
+						Contributed as part of The DAOincubator group on researching and implementing bonding
+						curve systems.
+					</li>
+					<li>Worked on research and designed bonding curve tokens for Trojan DAO.</li>
 				</ul>
 			</Card>
 		</Section>
@@ -145,7 +167,7 @@ const backend = ['Solidity', 'Python', 'TypeScript/JS', 'Rust']
 		<Section title='Projects'>
 			<div class='flex flex-col gap-y-3 sm:flex-row sm:gap-x-3 sm:gap-y-0'>
 				<ProjectCard
-					href='https://github.com/haythemsellami/world-id-state-arb-bridge'
+					href='https://github.com/eaglelabs-consulting/babe'
 					heading='Babe CoProcessor'
 					subheading='A Coprocessor built on top of SUAVE.'
 					imagePath='/src/assets/github-logo.png'
@@ -153,7 +175,7 @@ const backend = ['Solidity', 'Python', 'TypeScript/JS', 'Rust']
 					class='w-full sm:w-1/2'
 				/>
 				<ProjectCard
-					href='https://github.com/eaglelabs-consulting/babe'
+					href='https://github.com/haythemsellami/world-id-state-arb-bridge'
 					heading='WorldID Arbitrum State Bridge'
 					subheading='A WorldID state bridge implementation Mainnet<->Arbitrum.'
 					imagePath='/src/assets/github-logo.png'
@@ -188,7 +210,8 @@ const backend = ['Solidity', 'Python', 'TypeScript/JS', 'Rust']
 				/>
 				<ProjectCard
 					href='https://github.com/haythemsellami/bc-moloch-fork'
-					heading='Curvy MolochDAO 🍑'W
+					heading='Curvy MolochDAO 🍑'
+					W
 					subheading='A fork of MolochDAO that implements a bonding curve token for the guild bank.'
 					imagePath='/src/assets/github-logo.png'
 					altText='Curvy Moloch DAO logo'
