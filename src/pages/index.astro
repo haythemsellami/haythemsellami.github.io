@@ -12,7 +12,7 @@ import SkillLayout from '../components/SkillLayout.astro'
 
 // import { getAllPosts, sortMDByDate } from '@/utils'
 
-const backend = ['Python', 'TypeScript/JS', 'Rust']
+const skills = ['Solidity', 'Huff', 'Foundry', 'Echidna', 'Halmos', 'Rust', 'JS/TS', 'Node.js', 'GCP']
 
 // const MAX_POSTS = 10
 // const allPosts = await getAllPosts()
@@ -66,9 +66,10 @@ const backend = ['Python', 'TypeScript/JS', 'Rust']
 
 		<Section title='About'>
 			<p class='text-muted-foreground'>
-				Passionate about Smart Contract Engineering, Rust and all things Open Source. I currently
-				work on building different on-chain financials protocols at Euler Labs. Before that, I was
-				engineering options and derivative products(Squeeth) at Opyn.
+				Passionate about Smart Contract Engineering, Rust and all things Open Source. 6+ years of experience designing and deploying
+				production-grade DeFi protocols. Worked on lending, AMMs, derivatives, and yield
+				allocation protocols. Deep understanding of Solidity, EVM, and protocol security best
+				practices.
 			</p>
 		</Section>
 		<!-- {
@@ -90,54 +91,52 @@ const backend = ['Python', 'TypeScript/JS', 'Rust']
 				heading='Senior Smart Contract Engineer'
 				subheading='Euler Labs'
 				date='Nov 2023 - Apr 2025'
-				imagePath='/src/assets/about-astro.png'
-				altText='Euler Labs logo'
-				imageClass='h-12 w-auto md:-left-16'
 			>
 				<ul class='ml-4 list-disc text-muted-foreground'>
 					<li>
-						Designed and fully implemented Euler Earn, a liquidity allocation protocol, that deploy
-						funds and rebalance between any ERC4626-compatible contracts.
+						Designed and implemented Euler Earn, a capital allocation protocol that allows vault
+						managers to deploy funds into any ERC-4626–compatible vaults.
 					</li>
 					<li>
-						Contributed to writing the tests suite (unit tests, fuzz testing & e2e tests) for the
-						lending and borrowing protocol.
+						Contributed to the test suite of Euler V2, a next-generation lending and borrowing
+						protocol.
 					</li>
 					<li>
-						Contributed in building EulerSwap, a novel AMM that integrates with the Euler V2
-						protocol for better capital-efficiency, mainly worked on the factory and the swap
-						periphery contracts. Also handled the integration with external DEX-aggregators,
-						including 0x, ParaSwap & Tycho protocol.
+						Contributed to EulerSwap, a novel AMM leveraging Euler V2's lending positions for
+						enhanced capital efficiency. Focused on the factory and periphery contracts, and
+						handled integrations with DEX aggregators including 0x, ParaSwap, and Tycho Protocol.
 					</li>
-					<li>Internal security auditing & PR reviews.</li>
+					<li>
+						Conducted internal security audits and code reviews to ensure protocol robustness and
+						maintain code quality.
+					</li>
 				</ul>
 			</Card>
 			<Card
 				heading='Senior Smart Contract Engineer'
 				subheading='Opyn'
 				date='Apr 2020 - Nov 2023'
-				imagePath='/src/assets/about-astro.png'
-				altText='Opyn logo'
-				imageClass='h-12 w-auto md:-left-16'
 			>
 				<ul class='ml-4 list-disc text-muted-foreground'>
-					<li>Wrote technical spec, designed options and derivatives protocols.</li>
 					<li>
-						Built, contributed to and implemented from scratch multiple secure and robust smart
-						contracts systems, includes Gamma Protocol, the first on-chain options protocol and
-						Squeeth protocol, a new primitive in DeFi, the first power perpetual token.
+						Wrote technical specifications and designed core components of options and
+						derivatives protocols.
 					</li>
 					<li>
-						Built diﬀerent vaults and on-chain strategies contracts: Crab strategy, a delta neutral
-						strategy on top of Squeeth, and ZenBull strategy that integrates with Euler v1.
+						Built multiple robust smart contract systems from the ground up, including Gamma
+						Protocol (first on-chain options protocol) and Squeeth (first power perpetual token).
 					</li>
 					<li>
-						Built and maintained multiple bots and scripts for liquidation, Oracle keepers bot,
-						monitoring API using nodeJs, Python, OpenZeppelin Defender, Google Cloud services.
+						Developed and deployed strategy vaults like Crab (delta-neutral on Squeeth) and
+						ZenBull, integrated with Euler V1.
 					</li>
 					<li>
-						Integrated with diﬀerent AMMs, oracle systems, cross-chain messaging systems and
-						deployed on multiple L2 networks.
+						Built and maintained bot infrastructure for liquidations, oracles, and monitoring using
+						Node.js, Python, OpenZeppelin Defender, and Google Cloud.
+					</li>
+					<li>
+						Integrated with AMMs, oracles, cross-chain messaging systems; deployed across
+						multiple L2s.
 					</li>
 				</ul>
 			</Card>
@@ -145,12 +144,9 @@ const backend = ['Python', 'TypeScript/JS', 'Rust']
 				heading='Smart Contract Developer'
 				subheading='Freelance'
 				date='Jul 2018 - Mar 2020'
-				imagePath='/src/assets/about-astro.png'
-				altText='Freelance logo'
-				imageClass='h-12 w-auto md:-left-16'
 			>
 				<ul class='ml-4 list-disc text-muted-foreground'>
-					<li>Built a pooled liqudity market and developed an Oracle system for Alkemi Network.</li>
+					<li>Built smart contracts for a pooled-liquidity money market and Oracle aggregation contracts for Alkemi Network.</li>
 					<li>
 						Worked with Coinsence, incubated by UNICEF Innovation Fund, to build a communities based
 						fundraising system, built on top of Aragon framework.
@@ -159,7 +155,7 @@ const backend = ['Python', 'TypeScript/JS', 'Rust']
 						Contributed as part of The DAOincubator group on researching and implementing bonding
 						curve systems.
 					</li>
-					<li>Worked on research and designed bonding curve tokens for Trojan DAO.</li>
+					<li>Designed bonding curve token mechanics and DAO contracts for Trojan DAO.</li>
 				</ul>
 			</Card>
 		</Section>
@@ -221,7 +217,7 @@ const backend = ['Python', 'TypeScript/JS', 'Rust']
 		</Section>
 
 		<Section title='Skills'>
-			<SkillLayout title='Backend' skills={backend} />
+			<SkillLayout skills={skills} />
 		</Section>
 	</div>
 </PageLayout>
