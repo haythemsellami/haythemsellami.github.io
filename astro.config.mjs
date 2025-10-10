@@ -7,7 +7,6 @@ import remarkUnwrapImages from 'remark-unwrap-images'
 import rehypeExternalLinks from 'rehype-external-links'
 import expressiveCode from 'astro-expressive-code'
 import { expressiveCodeOptions } from './src/site.config'
-import icon from 'astro-icon'
 
 // https://astro.build/config
 export default defineConfig({
@@ -18,8 +17,7 @@ export default defineConfig({
 			applyBaseStyles: false
 		}),
 		sitemap(),
-		mdx(),
-		icon()
+		mdx()
 	],
 	markdown: {
 		remarkPlugins: [remarkUnwrapImages, remarkReadingTime],
