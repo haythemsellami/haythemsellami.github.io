@@ -16,7 +16,7 @@ export default defineConfig({
 		tailwind({
 			applyBaseStyles: false
 		}),
-		sitemap(),
+		// sitemap(), // Temporarily disabled due to bug in @astrojs/sitemap@3.7.0
 		mdx()
 	],
 	markdown: {

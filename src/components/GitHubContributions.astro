@@ -1,0 +1,154 @@
+---
+import contributions from '../data/github-contributions.json'
+
+const years = Object.keys(contributions).sort((a, b) => Number(b) - Number(a))
+const hasData = years.some((year) => contributions[year as keyof typeof contributions].length > 0)
+---
+
+{
+	hasData && (
+		<div class='contributions'>
+			<div class='contributions-header'>
+				<span class='contributions-title'>Open Source Contributions:</span>
+				<div class='year-tabs'>
+					{years.map((year, index) => {
+						const yearData = contributions[year as keyof typeof contributions]
+						if (yearData.length === 0) return null
+						return (
+							<button
+								class:list={['year-tab', { active: index === 0 }]}
+								data-year={year}
+								type='button'
+							>
+								{year}
+							</button>
+						)
+					})}
+				</div>
+			</div>
+
+			{years.map((year, index) => {
+				const yearData = contributions[year as keyof typeof contributions]
+				if (yearData.length === 0) return null
+				return (
+					<div class:list={['year-content', { hidden: index !== 0 }]} data-year-content={year}>
+						<div class='org-logos'>
+							{yearData.map((org) => (
+								<a
+									href={org.url}
+									target='_blank'
+									rel='noopener noreferrer'
+									title={org.name}
+									class='org-link'
+								>
+									<img src={org.avatarUrl} alt={org.name} class='org-logo' loading='lazy' />
+								</a>
+							))}
+						</div>
+					</div>
+				)
+			})}
+		</div>
+	)
+}
+
+<style>
+	.contributions {
+		margin-bottom: 0;
+	}
+
+	.contributions-header {
+		display: flex;
+		align-items: center;
+		gap: 0.5rem;
+		margin-bottom: 0.5rem;
+		flex-wrap: wrap;
+	}
+
+	.contributions-title {
+		font-size: 0.85rem;
+		color: #666;
+	}
+
+	.year-tabs {
+		display: flex;
+		gap: 0.25rem;
+		flex-wrap: wrap;
+	}
+
+	.year-tab {
+		background: none;
+		border: none;
+		padding: 0.1rem 0.35rem;
+		cursor: pointer;
+		font-size: 0.8rem;
+		color: #666;
+		border-bottom: 1px solid transparent;
+	}
+
+	.year-tab:hover {
+		color: #000;
+	}
+
+	.year-tab.active {
+		color: #000;
+		border-bottom-color: #0000ee;
+	}
+
+	.year-content {
+		display: block;
+	}
+
+	.year-content.hidden {
+		display: none;
+	}
+
+	.org-logos {
+		display: flex;
+		gap: 0.5rem;
+		flex-wrap: wrap;
+		align-items: center;
+	}
+
+	.org-link {
+		display: block;
+		border: none;
+	}
+
+	.org-link:hover {
+		opacity: 0.8;
+	}
+
+	.org-logo {
+		width: 28px;
+		height: 28px;
+		border-radius: 4px;
+		object-fit: cover;
+	}
+</style>
+
+<script>
+	document.addEventListener('DOMContentLoaded', () => {
+		const tabs = document.querySelectorAll('.year-tab')
+		const contents = document.querySelectorAll('.year-content')
+
+		tabs.forEach((tab) => {
+			tab.addEventListener('click', () => {
+				const year = tab.getAttribute('data-year')
+
+				// Update active tab
+				tabs.forEach((t) => t.classList.remove('active'))
+				tab.classList.add('active')
+
+				// Show corresponding content
+				contents.forEach((content) => {
+					if (content.getAttribute('data-year-content') === year) {
+						content.classList.remove('hidden')
+					} else {
+						content.classList.add('hidden')
+					}
+				})
+			})
+		})
+	})
+</script>
